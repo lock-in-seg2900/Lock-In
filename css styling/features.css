@@ -1,0 +1,148 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    background-color: #fae7e7;
+    color: black;
+    font-size: 20px;
+}
+
+.box {
+    margin-right: auto;
+}
+
+.nav {
+    padding: 20px;
+    background-color: #003285;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+}
+
+.menu {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.header{
+  position:relative; 
+  overflow:hidden;
+  background:linear-gradient(180deg,#003285 0%, #2a629a 100%);
+  color:#fff;
+}
+.header-inner{
+  padding: clamp(40px, 8vw, 96px) clamp(16px,5vw,64px) 64px;
+  display:grid; 
+  gap:10px; 
+  justify-items:center;
+}
+
+.our{
+    font-weight:900; 
+    font-size:clamp(48px,10vw,140px)
+}
+.features{
+    font-weight:900; 
+    font-size:clamp(24px,5vw,64px); 
+    transform:translateX(1.2ch);
+    margin-left: 2.5ch;
+}
+.subtitle{
+    opacity:.9; 
+    max-width:60ch; 
+    text-align:center
+}
+
+
+.wave{display:block; width:100%; height: 120px;}
+
+.work {
+    display: flex;
+    max-width: 1500px;
+    gap: clamp(16px,2vw,32px);
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.part {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #2a629a;
+    color: white;
+    margin: 10px;
+    padding: 35px;
+    flex: 1;
+    border-radius: 50px;
+}
+
+.work .part:nth-child(1){ 
+    transform:translateY(-10px); 
+}
+
+.work .part:nth-child(2){ 
+    transform:translateY(90px); 
+}
+
+.work .part:nth-child(3){ 
+    transform:translateY(-10px); 
+}
+
+.work .part:nth-child(4){ 
+    transform:translateY(90px); 
+}
+
+.btn{
+    padding: 10px;
+    border: 2px solid #ff7f3e;
+    background-color: #ff7f3e;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.footer{
+    background: #003285; 
+    color:#fff; 
+    text-align:center; 
+    padding:16px
+}
+
+@media all and (max-width:900px) {
+    .nav {
+    padding: 20px;
+    font-size: 18px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+}
+    .main_heading {
+    margin: 0;
+    font-weight: 5000;
+    letter-spacing: 0.02em;
+}
+    .features {
+    font-size:clamp(27px,5vw,60px);
+    margin-left: 2.5ch;
+}
+    .work .part:nth-child(1){ 
+    transform:translateY(0px); 
+}
+
+.work .part:nth-child(2){ 
+    transform:translateY(0px); 
+}
+
+.work .part:nth-child(3){ 
+    transform:translateY(0px); 
+}
+
+.work .part:nth-child(4){ 
+    transform:translateY(0px); 
+}
+}
