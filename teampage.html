@@ -1,65 +1,102 @@
-
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
-    <div class="navigation">               <!--just added this for now to style later-->
-        <a href="homepage.html">LockIn</a>
-        <a href="features.html">FEATURES</a>
-        <a href="pricing.html">PRICING</a>
-        <a href="teampage.html">ABOUT US</a>
-        <a href="FAQ.html">FAQ</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEET THE TEAM</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="styleteampage.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="lockin-logo.png" alt="LockIn Logo" class="logo-img" />
     </div>
-    
-    <head> 
-    <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
+    <nav class="navigation">
+      <a href="homepage.html">LockIn</a>
+      <a href="features.html">FEATURES</a>
+      <a href="pricing.html">PRICING</a>
+      <a href="teampage.html">ABOUT US</a>
+      <a href="FAQ.html">FAQ</a>
+    </nav>
+  </header>
 
-        <body>
-            <meta charset="UTF-8"
-            <meta name="viewport" content="width=device-width, initial-scale="1.0">
+  <div class="wrapper">
+    <div class="title">
+      <h4><strong>MEET THE TEAM</strong></h4>
+    </div>
 
-            <h1 style="text-align: center;">MEET THE TEAM</h1>
-        <!--styling later after i get info-->
-                <img src="imgteammember1.png" alt="picture of team member1" />  
-                    <p>
-                        short description of each team member and their skills!<br>ex: Seryne is the brains of the operation! Behind the scenes, [...]<br>Get in touch with (team member name)
-                    </p>
-                    <h3><a href="https://www.linkedin.com/in/seryne-ould-rabah-0a00b0329/" target="_blank">Seryne Ould Rabah</a></h3>
-                            <!--connect our profiles to our linkedin accounts-->
-                            <!--pictures of our faces + short desccription of us
-                            ex: Seryne was the brains behind the operation [...]-->
-                <br><br>
-                <img src="imgteammember2.png" alt="picture of team member2" />       
-                    <p>
-                        short description of each team member and their skills!
-                    </p>
-                    <h3><a href="https://www.linkedin.com/in/nazrinhuseynli?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Nazrin Huseynli</a></h3>
-                <br><br>
-                <img src="imgteammember3.png" alt="picture of team member3" />  
-                    <p>
-                        short description of each team member and their skills!
-                    </p>
-                    <h3><a href="linkedin" target="_blank">Ilyas El Banouri</a></h3>
-                <br><br>
-                <img src="imgteammember4.png" alt="picture of team member4" />  
-                    <p>
-                        short description of each team member and their skills!
-                    </p>
-                    <h3><a href="https://www.linkedin.com/in/aayanlatif?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Aayan Latif</a></h3>
-                <br><br>
-                <img src="imgteammember5.png" alt="picture of team member5" />  
-                    <p>
-                        short description of each team member and their skills!
-                    </p>
-                    <h3><a href="linkedin" target="_blank">Mehdi Khlass</a></h3>
-                <br><br>
-                <img src="imgteammember6.png" alt="picture of team member6" />
-                    <p>
-                        short description of each team member and their skills!
-                    </p>
-                    <h3><a href="https://www.linkedin.com/in/ahda-mohamed/" target="_blank">Ahda Mohamed</a></h3>
+    <div class="card_container">
+      <!-- Row 1 -->
+      <div class="card">
+        <div class="imgBx"><img src="seryneimg.png" alt="Seryne Ould Rabah" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Seryne Ould Rabah<br><span>Creative Mind</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="https://www.linkedin.com/in/seryne-ould-rabah-0a00b0329/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="mailto:sould013@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="card">
+        <div class="imgBx"><img src="nazrinimg.png" alt="Nazrin Huseynli" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Nazrin Huseynli<br><span>Visual Designer</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="https://www.linkedin.com/in/nazrinhuseynli?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="mailto:nhuse066@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
 
+      <div class="card">
+        <div class="imgBx"><img src="ilyasimg.png" alt="Ilyas El Banouri" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Ilyas El Banouri<br><span>Tech Lead</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="https://www.linkedin.com/in/ilyas-el-banouri-22529a22a/?originalSubdomain=ca"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
 
-    </body>
+      <!-- Row 2 -->
+      <div class="card">
+        <div class="imgBx"><img src="aayanimg.png" alt="Aayan Latif" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Aayan Latif<br><span>Content & Design</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="https://www.linkedin.com/in/aayanlatif?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="mailto:alati051@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imgBx"><img src="ahdaimg.png" alt="Ahda Mohamed" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Ahda Mohamed<br><span>Strategy & Logic</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="https://www.linkedin.com/in/ahda-mohamed/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="mailto:amoha060@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="imgBx"><img src="mehdiimg.png" alt="Mehdi Khlass" /></div>
+        <div class="content">
+          <div class="contentBx"><h3>Mehdi Khlass<br><span>Content & Target Audience</span></h3></div>
+          <ul class="sci">
+            <li style="--i:1"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            <li style="--i:2"><a href="mailto:mkhla018@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
-</DOCTYPE>
