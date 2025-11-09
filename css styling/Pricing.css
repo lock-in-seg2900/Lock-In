@@ -43,7 +43,11 @@ nav {
   height: 40px;
   width: auto;
 }
-
+.links {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
 .links a {
   color: var(--yellow);
   text-decoration: none;
@@ -89,7 +93,7 @@ header p {
   font-size: 1.2rem;
 }
 
-/* Plans */
+
 section.plans {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -174,4 +178,29 @@ footer {
   color: var(--yellow);
   background: var(--navy);
   border-top: 1px solid #0e2150;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--yellow);
+  margin-left: 1rem;
+  gap: 4px;
+}
+
+.lang-switch span {
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+  user-select: none;
+}
+
+.lang-switch span:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.divider {
+  opacity: 0.5;
 }
