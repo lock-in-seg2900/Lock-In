@@ -19,12 +19,6 @@ body {
     width: auto; 
     display: block; 
 } 
-.box {
-    margin-right: auto;
-    color: #ff7f3e;
-    font-weight: bold;
-}
-
 .nav {
     padding: 20px;
     background: linear-gradient(90deg, #003285, #2a629a);    
@@ -33,6 +27,22 @@ body {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;
+}
+.box {
+    color: #ff7f3e;
+    font-weight: bold;
+    margin-right: auto;
+}
+.menu {
+    padding: 10px;
+    color: #ffda78;
+    text-decoration: none;
+}
+.menu:hover {
+    color: #ffffff;
+}
+.box:hover {
+    color: #ff7f3e;
 }
 .lang-switch {
     display: flex;
@@ -44,11 +54,6 @@ body {
 }
 .divider {
     opacity: 0.5;
-}
-.menu {
-    padding: 10px;
-    color: #ffda78;
-    text-decoration: none;
 }
 .header{
     position:relative; 
@@ -199,4 +204,4 @@ body {
     .footer{
     font-size: 14px;
     }
-}}
+}
