@@ -21,6 +21,8 @@ body {
 } 
 .box {
     margin-right: auto;
+    color: #ff7f3e;
+    font-weight: bold;
 }
 
 .nav {
@@ -46,10 +48,6 @@ body {
     padding: 10px;
     color: #ffda78;
     text-decoration: none;
-}
-.box {
-    color: #ff7f3e;
-    font-weight: bold;
 }
 .header{
   position:relative; 
