@@ -1,98 +1,311 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <title>Lockin – Find Your Perfect Study Group</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background-color: #f5f7fb;
+        color: #111827;
+        line-height: 1.6;
+      }
+
+      header {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        background: linear-gradient(135deg, #1f2937, #111827);
+        color: #ffffff;
+      }
+
+      header h1 {
+        margin: 0 0 0.5rem;
+        font-size: 2rem;
+      }
+
+      header p {
+        margin: 0.25rem 0 1rem;
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+
+      nav a {
+        color: #e5e7eb;
+        text-decoration: none;
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      header hr {
+        margin-top: 1.5rem;
+        border: none;
+        border-top: 1px solid rgba(249, 250, 251, 0.1);
+      }
+
+      main {
+        max-width: 800px;
+        margin: 1.5rem auto 2rem;
+        padding: 0 1rem;
+      }
+
+      section {
+        background-color: #ffffff;
+        margin-bottom: 1.25rem;
+        padding: 1.25rem 1.5rem;
+        border-radius: 0.75rem;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+      }
+
+      section h2 {
+        margin-top: 0;
+        font-size: 1.25rem;
+        color: #111827;
+      }
+
+      ul {
+        padding-left: 1.25rem;
+        margin: 0.75rem 0 0;
+      }
+
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      /* Contact form styles */
+      #contact label {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #374151;
+      }
+
+      #contact input,
+      #contact textarea {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        margin-bottom: 0.9rem;
+        border-radius: 0.5rem;
+        border: 1px solid #d1d5db;
+        font: inherit;
+        background-color: #f9fafb;
+      }
+
+      #contact input:focus,
+      #contact textarea:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 1px #6366f1;
+        background-color: #ffffff;
+      }
+
+      #contact textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      #contact button {
+        display: inline-block;
+        padding: 0.7rem 1.4rem;
+        border-radius: 999px;
+        border: none;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: linear-gradient(135deg, #4f46e5, #6366f1);
+        color: #ffffff;
+      }
+
+      #contact button:hover {
+        filter: brightness(1.05);
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem 1rem 1.5rem;
+        font-size: 0.85rem;
+        color: #6b7280;
+      }
+
+      footer hr {
+        max-width: 800px;
+        margin: 0 auto 0.75rem;
+        border: none;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 1.7rem;
+        }
+
+        section {
+          padding: 1rem 1.1rem;
+        }
+      }
+    </style>
   </head>
+
   <body>
-  <header>
-    <h1>&#128274; Lockin</h1>
-    <p>Application pour trouver le camarade ou le groupe d’&#233;tude id&#233;al</p>
-    <nav>
-      <a rel="noopener" href="#presentation">Pr&#233;sentation</a> |
-      <a rel="noopener" href="#fonctionnalites">Fonctionnalit&#233;s</a> |
-      <a rel="noopener" href="#apropos">&#192; propos</a> |
-      <a rel="noopener" href="#contact">Contact</a>
-    </nav>
-    <hr/>
-  </header>
+    <header>
+      <h1>&#128274; Lockin</h1>
+      <p>App to find the ideal study buddy or study group</p>
+      <nav>
+        <a rel="noopener" href="#presentation">Overview</a> |
+        <a rel="noopener" href="#fonctionnalites">Features</a> |
+        <a rel="noopener" href="#apropos">About</a> |
+        <a rel="noopener" href="#contact">Contact</a>
+      </nav>
+      <hr />
+    </header>
 
-  <main>
-    <section>
-      <h2>Pr&#233;sentation</h2>
-      <p>
-        <strong>Lockin</strong> est une application con&#231;ue pour les &#233;tudiants qui souhaitent former 
-        des groupes d’&#233;tude efficaces. Gr&#226;ce &#224; un syst&#232;me de correspondance simple et intuitif, 
-        tu peux “swiper” pour trouver le camarade parfait avec qui travailler.
-      </p>
-    </section>
+    <main>
+      <section id="presentation">
+        <h2>Overview</h2>
+        <p>
+          <strong>Lockin</strong> is an app designed for students who want to
+          build effective study groups. With a simple and intuitive matching
+          system, you can swipe to find the perfect study buddy to work with.
+        </p>
+      </section>
 
-    <section>
-      <h2>Fonctionnalit&#233;s principales</h2>
-      <ul>
-        <li>&#128257; <strong>Swipe pour trouver ton match :</strong> glisse pour accepter ou passer des profils d’&#233;tudiants.</li>
-        <li>&#127919; <strong>Trouve ton camarade id&#233;al :</strong> d&#233;couvre des &#233;tudiants avec des int&#233;r&#234;ts et mati&#232;res communes.</li>
-        <li>&#128218; <strong>Forme ton groupe d’&#233;tude parfait :</strong> rejoins ou cr&#233;e un groupe adapt&#233; &#224; ton style de travail.</li>
-        <li>&#128172; <strong>Discute et planifie :</strong> une messagerie int&#233;gr&#233;e pour organiser vos s&#233;ances d’&#233;tude.</li>
-      </ul>
-    </section>
+      <section id="fonctionnalites">
+        <h2>Main Features</h2>
+        <ul>
+          <li>
+            &#128257;
+            <strong>Swipe to find your match:</strong> swipe to accept or skip
+            other students’ profiles.
+          </li>
+          <li>
+            &#127919;
+            <strong>Find your ideal study buddy:</strong> discover students who
+            share your interests and subjects.
+          </li>
+          <li>
+            &#128218;
+            <strong>Build your perfect study group:</strong> join or create a
+            group that matches your working style.
+          </li>
+          <li>
+            &#128172;
+            <strong>Chat and plan:</strong> built-in messaging to organize your
+            study sessions.
+          </li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>&#192; propos du projet</h2>
-      <p>
-        Ce projet a &#233;t&#233; d&#233;velopp&#233; dans le cadre d’un travail scolaire. 
-        L’objectif &#233;tait de cr&#233;er une id&#233;e d’application utile pour la vie &#233;tudiante, 
-        favorisant la collaboration, la motivation et la r&#233;ussite acad&#233;mique.
-      </p>
-    </section>
+      <section id="apropos">
+        <h2>About the Project</h2>
+        <p>
+          This project was developed as part of a school assignment. The goal
+          was to create an app idea that is useful for student life and that
+          encourages collaboration, motivation, and academic success.
+        </p>
+      </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Tu veux en savoir plus ou proposer une am&#233;lioration ? Remplis le formulaire ci-dessous :</p>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          Want to know more or suggest an improvement? Fill out the form below:
+        </p>
 
-      
-        <label for="nom">Nom :</label><br/>
-        <br/><br/>
+        <form>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
 
-        <label for="email">Courriel :</label><br/>
-        <br/><br/>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" />
 
-        <label for="message">Message :</label><br/>
-        <br/><br/>
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
 
-        
-      
-    </section>
-  </main>
+          <button type="submit">Send message</button>
+        </form>
+      </section>
+    </main>
 
-  <footer>
-    <hr/>
-    <p>&#169; 2025 Lockin</p>
-  </footer>
+    <footer>
+      <hr />
+      <p>&#169; 2025 Lockin</p>
+    </footer>
 
+    <!-- Brightspace scripts kept as in original (you can remove if not needed) -->
+    <script
+      type="module"
+      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/mathjax.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        if (
+          document.querySelector("math, .d2l-element, .d2l-cplus-layout") ||
+          /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(
+            document.body.innerHTML
+          )
+        ) {
+          document.querySelectorAll('mspace[linebreak="newline"]').forEach(
+            (elm) => {
+              elm.setAttribute(
+                "style",
+                "display: block; height: 0.5rem;"
+              );
+            }
+          );
 
+          document.querySelectorAll("math mmultiscripts > none").forEach(
+            (elm) => {
+              const mrow = document.createElementNS(
+                "http://www.w3.org/1998/Math/MathML",
+                "mrow"
+              );
+              elm.replaceWith(mrow);
+            }
+          );
 
-<script type="module" src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/mathjax.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-						if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
-							document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
-								elm.setAttribute('style', 'display: block; height: 0.5rem;');
-							});
-
-							document.querySelectorAll('math mmultiscripts > none').forEach(elm => {
-								const mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
-								elm.replaceWith(mrow);
-							});
-
-							window.D2L.MathJax.loadMathJax({
-								outputScale: 1.5,
-								renderLatex: false,
-								enableMML3Support: false
-							});
-						}
-					});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/prism.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					document.querySelectorAll('.d2l-code').forEach(code => {
-						window.D2L.Prism.formatCodeElement(code);
-					});
-				});</script><script type="module" src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/embeds.js"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() {
-					window.D2L.EmbedRenderer.renderEmbeds(document.body);
-				});</script>
+          window.D2L.MathJax.loadMathJax({
+            outputScale: 1.5,
+            renderLatex: false,
+            enableMML3Support: false,
+          });
+        }
+      });
+    </script>
+    <script
+      type="module"
+      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/prism.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".d2l-code").forEach((code) => {
+          window.D2L.Prism.formatCodeElement(code);
+        });
+      });
+    </script>
+    <script
+      type="module"
+      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/embeds.js"
+    ></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        window.D2L.EmbedRenderer.renderEmbeds(document.body);
+      });
+    </script>
   </body>
 </html>
