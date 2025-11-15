@@ -1,14 +1,3 @@
-
-/* PAGE STUFF
-
-navy: #003285;
-sky: #2A629A;
-sunset: #FF7F3E;
-yellow: #FFDA78;
-white: #fdfaf5;
-  
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +11,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  font-family: "DM Sans", sans-serif;
   min-height: 100vh;
 }
 
@@ -33,7 +21,6 @@ body {
   padding: 0px 30px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
-
 
 .logo-img {
   height: 140px;
@@ -166,7 +153,6 @@ footer {
   border-top: 1px solid #0e2150;
 }
 
-
 .socialicons {
   display: flex;
   justify-content: center;
@@ -205,7 +191,6 @@ footer {
 .footerbottom p{
   color: rgb(0, 0, 0);
 }
-
 
 /* TEAM MEMBER THINGS! */
 
@@ -319,7 +304,6 @@ footer {
   color: #579bee;
 }
 
-
 /* FORM STUFF!!! */
 
 .form {
@@ -423,7 +407,6 @@ footer {
   background-color: transparent;
   color: rgb(106, 69, 13);
 }
-
 
 .lang-switch {
   display: flex;
