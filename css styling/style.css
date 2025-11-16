@@ -65,6 +65,41 @@
       font-size: 0.85rem;
       color: var(--text-muted);
     }
+
+/* ================= FAQ SECTION STYLES ================= */
+
+    .faq {
+      padding: 4rem 0 4.5rem;
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 2.3rem;
+    }
+
+    .faq-item {
+      padding: 1.1rem 1.1rem 1.2rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(31,41,55,0.9);
+      font-size: 0.9rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.98rem;
+      margin: 0 0 0.35rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
 /* ================= TEAM STYLE ================= */
 
     .team {
