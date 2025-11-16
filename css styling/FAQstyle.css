@@ -170,7 +170,7 @@ header p
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--sunset);
-    transition: transform 0.2s ease-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .faq-answer
@@ -185,7 +185,6 @@ header p
 {
     max-height: 500px;
     margin: 0;
-    transition: max-height 0.6s ease-in, padding 0.6s ease-in;
 }
 
 .faq-answer p
@@ -235,3 +234,4 @@ footer {
 .divider {
   opacity: 0.5;
 }
+
