@@ -1,311 +1,1145 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lockin – Find Your Perfect Study Group</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lockin — All-in-one Study App</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-      * {
-        box-sizing: border-box;
+  <style>
+    :root {
+      --bg-page: #020617;
+      --bg-hero: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+      --bg-section-dark: #020617;
+      --bg-section-mid: #020617;
+      --bg-card: #0b1220;
+      --bg-card-soft: #020617;
+      --primary: #3b82f6;
+      --primary-soft: #60a5fa;
+      --accent: #f97316;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-soft: 0 24px 70px rgba(15, 23, 42, 0.9);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(15,23,42,0.98), rgba(15,23,42,0.78));
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      background: conic-gradient(from 200deg, #f97316, #facc15, #3b82f6, #f97316);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.6);
+    }
+
+    .logo-mark-inner {
+      width: 18px;
+      height: 18px;
+      border-radius: 7px;
+      background: #020617;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text span:first-child {
+      font-size: 0.9rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .logo-text span:last-child {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #e5e7eb;
+      opacity: 0.8;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--primary-soft));
+      color: #0b1120;
+      box-shadow: 0 12px 30px rgba(37,99,235,0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(37,99,235,0.7);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #e5e7eb;
+      border-color: rgba(148,163,184,0.6);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15,23,42,0.9);
+      border-color: rgba(148,163,184,0.9);
+    }
+
+    /* HERO */
+
+    .hero {
+      background: var(--bg-hero);
+      padding: 3.5rem 0 4.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(129,140,248,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a5b4fc;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
+      line-height: 1.1;
+      margin: 0 0 1rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #bfdbfe, #e9d5ff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      margin: 0 0 1.5rem;
+      color: var(--text-muted);
+      max-width: 450px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .hero-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55,65,81,0.8);
+    }
+
+    .hero-badges span::before {
+      content: "•";
+      color: #4ade80;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* HERO VISUAL (phone mockup) */
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .device {
+      width: 280px;
+      height: 520px;
+      border-radius: 40px;
+      padding: 10px;
+      background: radial-gradient(circle at top, #1d4ed8, #020617);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+    }
+
+    .device-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 32px;
+      background: radial-gradient(circle at top left, #111827, #020617 70%);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      color: #f9fafb;
+      font-size: 0.78rem;
+    }
+
+    .device-status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .device-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(96,165,250,0.7);
+      font-size: 0.7rem;
+    }
+
+    .device-card {
+      border-radius: 18px;
+      padding: 0.7rem 0.8rem;
+      background: linear-gradient(135deg, rgba(37,99,235,0.95), rgba(139,92,246,0.9));
+      box-shadow: 0 14px 35px rgba(37,99,235,0.7);
+    }
+
+    .device-card h4 {
+      margin: 0 0 0.15rem;
+      font-size: 0.86rem;
+    }
+
+    .device-card p {
+      margin: 0;
+      font-size: 0.72rem;
+      opacity: 0.9;
+    }
+
+    .device-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .device-list-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 14px;
+      padding: 0.55rem 0.7rem;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .device-list-item strong {
+      font-size: 0.75rem;
+    }
+
+    .device-list-item span {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .device-tag {
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(34,197,94,0.16);
+      color: #4ade80;
+      font-size: 0.68rem;
+    }
+
+    .device-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    /* TRUST / HIGHLIGHTS */
+
+    .trust {
+      background: var(--bg-section-mid);
+      padding: 1.5rem 0 3rem;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .trust-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .trust-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      opacity: 0.8;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .trust-pill {
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px dashed rgba(148,163,184,0.6);
+      color: #9ca3af;
+    }
+
+    /* FEATURES GRID */
+
+    .features {
+      padding: 3.5rem 0 4rem;
+      background: radial-gradient(circle at top, #111827, #020617 60%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #818cf8;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      margin: 0 0 0.6rem;
+    }
+
+    .section-subtitle {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .feature-card {
+      background: radial-gradient(circle at top left, #0f172a, #020617 70%);
+      border-radius: var(--radius-xl);
+      padding: 1.6rem 1.4rem 1.7rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+    }
+
+    .feature-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* PRICING */
+
+    .pricing {
+      padding: 4rem 0 4.5rem;
+      background: radial-gradient(circle at top, #020617, #020617);
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.2rem;
+    }
+
+    .plan-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 1.9rem 1.7rem 2.1rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 22px 50px rgba(15,23,42,0.9);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .plan-tagline {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .plan-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .plan-price {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .plan-price span {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .plan-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.4rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .plan-features li {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-features li::before {
+      content: "✓";
+      color: #4ade80;
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+
+    .plan-cta {
+      margin-top: auto;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .plan-card.popular {
+      border-color: rgba(249,115,22,0.9);
+      position: relative;
+      transform: translateY(-6px);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+      background: #f97316;
+      color: #0b1120;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      box-shadow: 0 14px 35px rgba(249,115,22,0.65);
+    }
+
+    /* DOWNLOAD / APP STORES */
+
+    .download {
+      padding: 4rem 0 4.5rem;
+      background: radial-gradient(circle at top, #020617, #020617);
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .download-highlight {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+      max-width: 420px;
+    }
+
+    .store-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.8);
+      text-decoration: none;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      min-width: 170px;
+      justify-content: center;
+    }
+
+    .store-badge:hover {
+      border-color: var(--primary-soft);
+      background: radial-gradient(circle at top left, #0f172a, #020617);
+    }
+
+    .store-badge-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #0ea5e9, #22c55e);
+    }
+
+    .store-badge-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .store-badge-text span:first-child {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.8;
+    }
+
+    .store-badge-text span:last-child {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .download-card {
+      background: radial-gradient(circle at top, #111827, #020617 70%);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.5rem 1.7rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.86rem;
+    }
+
+    .download-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .download-card p {
+      margin: 0 0 1rem;
+      color: var(--text-muted);
+    }
+
+    .download-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+    }
+
+    .download-chip {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+    }
+
+    /* FAQ */
+
+    .faq {
+      padding: 4rem 0 4.5rem;
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 2.3rem;
+    }
+
+    .faq-item {
+      padding: 1.1rem 1.1rem 1.2rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(31,41,55,0.9);
+      font-size: 0.9rem;
+    }
+
+    .faq-item h3 {
+      font-size: 0.98rem;
+      margin: 0 0 0.35rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      border-top: 1px solid rgba(15,23,42,0.9);
+      padding: 1.7rem 0 2.1rem;
+      background: #020617;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #9ca3af;
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .download-grid,
+      .faq-grid {
+        grid-template-columns: minmax(0,1fr);
       }
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
-        background-color: #f5f7fb;
-        color: #111827;
-        line-height: 1.6;
+      .hero {
+        padding-top: 3rem;
       }
 
-      header {
-        text-align: center;
-        padding: 1.5rem 1rem;
-        background: linear-gradient(135deg, #1f2937, #111827);
-        color: #ffffff;
+      .hero-grid {
+        gap: 2.2rem;
       }
 
-      header h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2rem;
+      .hero-visual {
+        order: -1;
       }
 
-      header p {
-        margin: 0.25rem 0 1rem;
-        font-size: 0.95rem;
-        opacity: 0.85;
+      .device {
+        margin: 0 auto;
       }
 
-      nav a {
-        color: #e5e7eb;
-        text-decoration: none;
-        margin: 0 0.5rem;
-        font-size: 0.9rem;
-        font-weight: 500;
+      .feature-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
       }
 
-      nav a:hover {
-        text-decoration: underline;
+      .pricing-grid {
+        grid-template-columns: minmax(0,1fr);
       }
 
-      header hr {
-        margin-top: 1.5rem;
-        border: none;
-        border-top: 1px solid rgba(249, 250, 251, 0.1);
+      .plan-card.popular {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .navbar-inner {
+        flex-wrap: wrap;
+        gap: 0.7rem;
       }
 
-      main {
-        max-width: 800px;
-        margin: 1.5rem auto 2rem;
-        padding: 0 1rem;
-      }
-
-      section {
-        background-color: #ffffff;
-        margin-bottom: 1.25rem;
-        padding: 1.25rem 1.5rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
-      }
-
-      section h2 {
-        margin-top: 0;
-        font-size: 1.25rem;
-        color: #111827;
-      }
-
-      ul {
-        padding-left: 1.25rem;
-        margin: 0.75rem 0 0;
-      }
-
-      ul li {
-        margin-bottom: 0.5rem;
-      }
-
-      strong {
-        font-weight: 600;
-      }
-
-      /* Contact form styles */
-      #contact label {
-        display: block;
-        margin-bottom: 0.25rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        color: #374151;
-      }
-
-      #contact input,
-      #contact textarea {
+      .nav-links {
         width: 100%;
-        padding: 0.6rem 0.75rem;
-        margin-bottom: 0.9rem;
-        border-radius: 0.5rem;
-        border: 1px solid #d1d5db;
-        font: inherit;
-        background-color: #f9fafb;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        row-gap: 0.3rem;
+        font-size: 0.82rem;
       }
 
-      #contact input:focus,
-      #contact textarea:focus {
-        outline: none;
-        border-color: #6366f1;
-        box-shadow: 0 0 0 1px #6366f1;
-        background-color: #ffffff;
+      .feature-grid {
+        grid-template-columns: minmax(0,1fr);
       }
 
-      #contact textarea {
-        min-height: 120px;
-        resize: vertical;
+      .trust-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
+    }
+  </style>
+</head>
+<body>
 
-      #contact button {
-        display: inline-block;
-        padding: 0.7rem 1.4rem;
-        border-radius: 999px;
-        border: none;
-        font-size: 0.95rem;
-        font-weight: 600;
-        cursor: pointer;
-        background: linear-gradient(135deg, #4f46e5, #6366f1);
-        color: #ffffff;
-      }
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">
+          <span class="logo-mark-inner"></span>
+        </span>
+        <div class="logo-text">
+          <span>LOCKIN</span>
+          <span>Study together, from anywhere</span>
+        </div>
+      </a>
 
-      #contact button:hover {
-        filter: brightness(1.05);
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem 1rem 1.5rem;
-        font-size: 0.85rem;
-        color: #6b7280;
-      }
-
-      footer hr {
-        max-width: 800px;
-        margin: 0 auto 0.75rem;
-        border: none;
-        border-top: 1px solid #e5e7eb;
-      }
-
-      @media (max-width: 600px) {
-        header h1 {
-          font-size: 1.7rem;
-        }
-
-        section {
-          padding: 1rem 1.1rem;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header>
-      <h1>&#128274; Lockin</h1>
-      <p>App to find the ideal study buddy or study group</p>
-      <nav>
-        <a rel="noopener" href="#presentation">Overview</a> |
-        <a rel="noopener" href="#fonctionnalites">Features</a> |
-        <a rel="noopener" href="#apropos">About</a> |
-        <a rel="noopener" href="#contact">Contact</a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a href="#download" class="btn btn-ghost">Get the app</a>
       </nav>
-      <hr />
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section id="presentation">
-        <h2>Overview</h2>
-        <p>
-          <strong>Lockin</strong> is an app designed for students who want to
-          build effective study groups. With a simple and intuitive matching
-          system, you can swipe to find the perfect study buddy to work with.
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Built for students, loved by campuses</div>
+        <h1 class="hero-title">
+          All-in-one <span>study companion</span> for your campus.
+        </h1>
+        <p class="hero-subtitle">
+          Lockin helps you find classmates, book study rooms, and schedule group
+          sessions in seconds — all from one simple app.
         </p>
-      </section>
 
-      <section id="fonctionnalites">
-        <h2>Main Features</h2>
-        <ul>
-          <li>
-            &#128257;
-            <strong>Swipe to find your match:</strong> swipe to accept or skip
-            other students’ profiles.
-          </li>
-          <li>
-            &#127919;
-            <strong>Find your ideal study buddy:</strong> discover students who
-            share your interests and subjects.
-          </li>
-          <li>
-            &#128218;
-            <strong>Build your perfect study group:</strong> join or create a
-            group that matches your working style.
-          </li>
-          <li>
-            &#128172;
-            <strong>Chat and plan:</strong> built-in messaging to organize your
-            study sessions.
-          </li>
+        <div class="hero-badges">
+          <span>No credit card required</span>
+          <span>iOS and Android</span>
+          <span>Designed for universities</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary">Get the app</a>
+          <a href="#pricing" class="btn btn-ghost">View pricing</a>
+        </div>
+        <div class="hero-note">
+          Trusted by students across engineering, medicine, and business programs.
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="device">
+          <div class="device-inner">
+            <div class="device-status">
+              <span>Lockin · Today</span>
+              <span>09:32</span>
+            </div>
+
+            <div class="device-card">
+              <h4>PHY1721 Study Group</h4>
+              <p>Room B204 · Today · 18:00–19:30</p>
+            </div>
+
+            <div class="device-list">
+              <div class="device-list-item">
+                <div>
+                  <strong>Algorithms midterm review</strong><br />
+                  <span>Joined · 6 members</span>
+                </div>
+                <span class="device-tag">Live</span>
+              </div>
+
+              <div class="device-list-item">
+                <div>
+                  <strong>Organic chemistry Q&amp;A</strong><br />
+                  <span>Starts in 45 min</span>
+                </div>
+                <span class="device-tag" style="background:rgba(59,130,246,0.2);color:#93c5fd;">Scheduled</span>
+              </div>
+
+              <div class="device-list-item">
+                <div>
+                  <strong>Calc exam practice</strong><br />
+                  <span>Seats left: 3</span>
+                </div>
+                <span class="device-tag" style="background:rgba(16,185,129,0.16);color:#6ee7b7;">Join</span>
+              </div>
+            </div>
+
+            <div class="device-footer">
+              <span>Smart suggestions · 3 new</span>
+              <span>Swipe to see more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST / HIGHLIGHTS -->
+  <section class="trust">
+    <div class="container trust-inner">
+      <div>Helping students organize study life across lectures, labs, and exams.</div>
+      <div class="trust-logos">
+        <span class="trust-pill">Study groups</span>
+        <span class="trust-pill">Smart scheduling</span>
+        <span class="trust-pill">Room booking</span>
+        <span class="trust-pill">Campus-ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-kicker">Why students choose Lockin</div>
+        <h2 class="section-title">Everything you need to study together</h2>
+        <p class="section-subtitle">
+          Designed like a premium productivity app, but focused entirely on group study and campus life.
+        </p>
+      </header>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Join study groups instantly</h3>
+          <p>Discover groups by course, topic, or exam date. Join in one tap and keep all your sessions in one place.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Chat that stays on topic</h3>
+          <p>Share notes, screenshots, and questions without mixing them with your personal messaging apps.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">📅</div>
+          <h3>Smart scheduling for everyone</h3>
+          <p>Find times that work around lectures, labs, and work shifts — Lockin highlights the best options automatically.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-icon">🏫</div>
+          <h3>Campus room booking</h3>
+          <p>Keep track of where you’re meeting. Attach rooms, links, or locations to each study session.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-kicker">Transparent pricing</div>
+        <h2 class="section-title">Start free, upgrade when you’re ready</h2>
+        <p class="section-subtitle">
+          Lockin is free for individual students. Teams and programs can upgrade for advanced analytics and priority support.
+        </p>
+      </header>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <article class="plan-card">
+          <div class="plan-tagline">For individual students</div>
+          <h3 class="plan-title">Starter</h3>
+          <p class="plan-price">$0 <span>/ month</span></p>
+          <p class="plan-note">Perfect to try Lockin and join study groups on your campus.</p>
+          <ul class="plan-features">
+            <li>Join unlimited public study groups</li>
+            <li>Student chat &amp; file sharing</li>
+            <li>Basic room &amp; location notes</li>
+          </ul>
+          <div class="plan-cta">
+            <a href="#download" class="btn btn-primary">Get started free</a>
+          </div>
+        </article>
+
+        <!-- Plus -->
+        <article class="plan-card popular">
+          <div class="plan-badge">Most popular</div>
+          <div class="plan-tagline">For power users &amp; small teams</div>
+          <h3 class="plan-title">Plus</h3>
+          <p class="plan-price">$9.99 <span>/ month</span></p>
+          <p class="plan-note">Upgrade your study workflow with smarter tools and faster support.</p>
+          <ul class="plan-features">
+            <li>Everything in Starter</li>
+            <li>Advanced scheduling &amp; reminders</li>
+            <li>Priority support</li>
+            <li>Private group controls</li>
+          </ul>
+          <div class="plan-cta">
+            <a href="#download" class="btn btn-primary">Choose Plus</a>
+          </div>
+        </article>
+
+        <!-- Premium -->
+        <article class="plan-card">
+          <div class="plan-tagline">For programs &amp; campuses</div>
+          <h3 class="plan-title">Premium</h3>
+          <p class="plan-price">$19.99 <span>/ month</span></p>
+          <p class="plan-note">Bring Lockin to your entire cohort or department with admin tools.</p>
+          <ul class="plan-features">
+            <li>All Plus features included</li>
+            <li>Usage &amp; engagement analytics</li>
+            <li>Early access to new features</li>
+            <li>Dedicated onboarding support</li>
+          </ul>
+          <div class="plan-cta">
+            <a href="#download" class="btn btn-primary">Talk to us</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD / FEATURED APP -->
+  <section class="download" id="download">
+    <div class="container download-grid">
+      <div>
+        <header class="section-header" style="text-align:left;margin-bottom:1.4rem;">
+          <div class="section-kicker">Featured app</div>
+          <h2 class="section-title">Available on App Store &amp; Google Play</h2>
+          <p class="section-subtitle">
+            Lockin is optimized for phones and tablets so study sessions, reminders,
+            and room bookings are always in your pocket.
+          </p>
+        </header>
+
+        <p class="download-highlight">
+          Scan a QR code in class, tap a link from your professor, or discover groups directly from friends — Lockin keeps everyone in sync.
+        </p>
+
+        <div class="store-badges">
+          <a href="#" class="store-badge" aria-label="Download on the App Store">
+            <span class="store-badge-icon"></span>
+            <span class="store-badge-text">
+              <span>Download on the</span>
+              <span>App Store</span>
+            </span>
+          </a>
+
+          <a href="#" class="store-badge" aria-label="Get it on Google Play">
+            <span class="store-badge-icon" style="background:linear-gradient(135deg,#22c55e,#3b82f6);"></span>
+            <span class="store-badge-text">
+              <span>Get it on</span>
+              <span>Google Play</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="download-card">
+        <h3>Designed for real campus schedules</h3>
+        <p>
+          Lockin fits into the way you already study. Add sessions between lectures, pin
+          important resources, and sync reminders so your whole group arrives on time.
+        </p>
+
+        <ul class="plan-features" style="margin-bottom:0.8rem;">
+          <li>Dark-mode ready design for late-night study</li>
+          <li>Lightning-fast join links for new members</li>
+          <li>Secure account creation using your email</li>
         </ul>
-      </section>
 
-      <section id="apropos">
-        <h2>About the Project</h2>
-        <p>
-          This project was developed as part of a school assignment. The goal
-          was to create an app idea that is useful for student life and that
-          encourages collaboration, motivation, and academic success.
+        <div class="download-meta">
+          <span class="download-chip">iOS &amp; Android</span>
+          <span class="download-chip">Works with tablets</span>
+          <span class="download-chip">Syncs across devices</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">Answers before you get started</h2>
+        <p class="section-subtitle">
+          Still unsure if Lockin is right for you? Here are a few of the most common questions from students.
         </p>
-      </section>
+      </header>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>
-          Want to know more or suggest an improvement? Fill out the form below:
-        </p>
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>Do I need to pay to use Lockin?</h3>
+          <p>
+            No. The Starter plan is free for individual students and gives you access to study groups,
+            chat, and basic scheduling. You only pay if you choose to upgrade to Plus or Premium.
+          </p>
+        </article>
 
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" />
+        <article class="faq-item">
+          <h3>Can I use Lockin without my university?</h3>
+          <p>
+            Yes. You can create or join groups with classmates even if your university hasn’t officially
+            partnered with Lockin yet. Campus-wide analytics are only available on Premium.
+          </p>
+        </article>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" />
+        <article class="faq-item">
+          <h3>Which platforms are supported?</h3>
+          <p>
+            Lockin works on iOS and Android. A responsive web version is also available on modern browsers
+            so you can access your groups from your laptop.
+          </p>
+        </article>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message"></textarea>
+        <article class="faq-item">
+          <h3>Can teachers or TAs use Lockin?</h3>
+          <p>
+            Absolutely. Many instructors use Lockin to host review sessions and office-hours style groups.
+            Just create a private group and share the invite link with your students.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-          <button type="submit">Send message</button>
-        </form>
-      </section>
-    </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 Lockin · Study smarter, together.</div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#download">Download</a>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-      <hr />
-      <p>&#169; 2025 Lockin</p>
-    </footer>
-
-    <!-- Brightspace scripts kept as in original (you can remove if not needed) -->
-    <script
-      type="module"
-      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/mathjax.js"
-    ></script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        if (
-          document.querySelector("math, .d2l-element, .d2l-cplus-layout") ||
-          /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(
-            document.body.innerHTML
-          )
-        ) {
-          document.querySelectorAll('mspace[linebreak="newline"]').forEach(
-            (elm) => {
-              elm.setAttribute(
-                "style",
-                "display: block; height: 0.5rem;"
-              );
-            }
-          );
-
-          document.querySelectorAll("math mmultiscripts > none").forEach(
-            (elm) => {
-              const mrow = document.createElementNS(
-                "http://www.w3.org/1998/Math/MathML",
-                "mrow"
-              );
-              elm.replaceWith(mrow);
-            }
-          );
-
-          window.D2L.MathJax.loadMathJax({
-            outputScale: 1.5,
-            renderLatex: false,
-            enableMML3Support: false,
-          });
-        }
-      });
-    </script>
-    <script
-      type="module"
-      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/prism.js"
-    ></script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".d2l-code").forEach((code) => {
-          window.D2L.Prism.formatCodeElement(code);
-        });
-      });
-    </script>
-    <script
-      type="module"
-      src="https://s.brightspace.com/lib/bsi/2025.9.207/unbundled/embeds.js"
-    ></script>
-    <script type="text/javascript">
-      document.addEventListener("DOMContentLoaded", function () {
-        window.D2L.EmbedRenderer.renderEmbeds(document.body);
-      });
-    </script>
-  </body>
+</body>
 </html>
