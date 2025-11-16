@@ -1,142 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <section class="team" id="team">
+    <div class="container">
+      <header class="section-header">
+        <div class="section-kicker">Meet the team</div>
+        <h2 class="section-title">The people behind Lockin</h2>
+        <p class="section-subtitle">
+          A small, focused team of students and engineers building tools we wished we had during our own exams.
+        </p>
+      </header>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" type="text/css" href="styleteampage.css" />
-</head>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Ilyas</div>
+          <div class="team-role">Co-founder & Product</div>
+          <p class="team-bio">
+            Leads product vision and UX, making sure Lockin feels fast, friendly, and built for real students.
+          </p>
+          <span class="team-tag">Product & Growth</span>
+        </article>
 
-<body>
-  <header class="header">
-    <div class="logo">
-      <img src="lockin-logo.png" alt="LockIn Logo" class="logo-img" />
-    </div>
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Ahda</div>
+          <div class="team-role">Engineering</div>
+          <p class="team-bio">
+            Focuses on core app performance, stability, and making sure everything runs smoothly at scale.
+          </p>
+          <span class="team-tag">Backend & Infra</span>
+        </article>
 
-    <nav class="navigation">
-      <div class="nav-left">
-        <a href="homepage.html" class="home-link" data-en="LockIn" data-fr="LockIn">LockIn</a>
-      </div>
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Seryne</div>
+          <div class="team-role">Design & Experience</div>
+          <p class="team-bio">
+            Crafts the visual language of Lockin and ensures the app feels clean and easy to use.
+          </p>
+          <span class="team-tag">UI & UX</span>
+        </article>
 
-      <div class="nav-right">
-        <a href="features.html" data-en="Features" data-fr="Fonctionnalités">Features</a>
-        <a href="pricing.html" data-en="Pricing" data-fr="Tarifs">Pricing</a>
-        <a href="teampage.html" data-en="Team" data-fr="Équipe">Team</a>
-        <a href="FAQ.html" data-en="FAQ" data-fr="FAQ">FAQ</a>
-      </div>
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Nazrin</div>
+          <div class="team-role">Community</div>
+          <p class="team-bio">
+            Listens to student feedback and turns it into improvements and new ideas for Lockin.
+          </p>
+          <span class="team-tag">Student Success</span>
+        </article>
 
-      <div class="lang-switch">
-        <span id="en">EN</span>
-        <span class="divider">|</span>
-        <span id="fr">FR</span>
-      </div>
-    </nav>
-  </header>
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Aayan</div>
+          <div className="team-role">Growth & Partnerships</div>
+          <p class="team-bio">
+            Helps clubs, cohorts, and programs onboard to Lockin and get their first study groups running.
+          </p>
+          <span class="team-tag">Growth</span>
+        </article>
 
-  
-  <div class="wrapper">
-    <div class="title">
-      <h4><strong data-en="Meet The Team" data-fr="Rencontrez l'équipe">Meet The Team</strong></h4>
-      <h2 data-en="Built by students, for students." data-fr="Conçu par des étudiants, pour des étudiants.">Built by students, for students.</h2>
-    </div>
-
-    <div class="card_container">
-      <!-- row 1 of 3 members -->
-      <div class="card">
-        <div class="imagebox"><img src="serynephoto.jpeg" alt="Seryne Ould Rabah" /></div>
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Seryne Ould Rabah" data-fr="Seryne Ould Rabah">Seryne Ould Rabah<br></span><span class="member-role"data-en="Tech Lead" data-fr="Responsable Technique">Tech Lead</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="https://www.linkedin.com/in/seryne-ould-rabah-0a00b0329/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="mailto:sould013@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="imagebox"><img src="nazrinsphoto.jpg" alt="Nazrin Huseynli" /></div>
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Nazrin Huseynli" data-fr="Nazrin Huseynli">Nazrin Huseynli<br></span><span class="member-role" data-en="Visual Designer" data-fr="Designer Visuel">Visual Designer</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="https://www.linkedin.com/in/nazrinhuseynli?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="mailto:nhuse066@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="imagebox"><img src="ilyasphoto.jpg" alt="Ilyas El Banouri" /></div>
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Ilyas El Banouri" data-fr="Ilyas El Banouri">Ilyas El Banouri<br></span><span class="member-role" data-en="Creative Mind" data-fr="Esprit Créatif">Creative Mind</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="https://www.linkedin.com/in/ilyas-el-banouri-22529a22a/?originalSubdomain=ca"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- row 2 of 3 members -->
-      <div class="card">
-        <div class="imagebox"><img src="aayanphoto.jpg" alt="Aayan Latif" /></div>
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Aayan Latif" data-fr="Aayan Latif">Aayan Latif<br></span><span class="member-role"data-en="Content & Design" data-fr="Contenu et Conception">Content & Design</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="https://www.linkedin.com/in/aayanlatif?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="mailto:alati051@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="imagebox"><img src="ahdaphoto.jpg" alt="Ahda Mohamed" /></div>
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Ahda Mohamed" data-fr="Ahda Mohamed">Ahda Mohamed<br></span><span class="member-role" data-en="Strategy & Logic" data-fr="Stratégie et Logique">Strategy & Logic</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="https://www.linkedin.com/in/ahda-mohamed/"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="mailto:amoha060@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="content">
-          <div class="contentbox"><h3><span class="member-name" data-en="Mehdi Khlass" data-fr="Mehdi Khlass">Mehdi Khlass<br></span><span class="member-role" data-en="Content & Target Audience" data-fr="Contenu et Public Cible">Content & Target Audience</span></h3></div>
-          <ul class="social">
-            <li style="--i:1"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-            <li style="--i:2"><a href="mailto:mkhla018@uottawa.ca"><i class="fa-regular fa-envelope"></i></a></li>
-          </ul>
-        </div>
+        <article class="team-card">
+          <div class="team-photo">Image placeholder</div>
+          <div class="team-name">Mehdi</div>
+          <div class="team-role">Data & Product</div>
+          <p class="team-bio">
+            Uses data to understand how students study and which features matter most for exam season.
+          </p>
+          <span class="team-tag">Analytics</span>
+        </article>
       </div>
     </div>
-  </div>
+  </section>
 
-
-<br><br>
-
-
-<div class="help-title">
-  <h3><strong data-en="Need help? We're here for you." data-fr="Besoin d'aide? Nous sommes là pour vous.">Need help? We're here for you.</strong></h3>
-</div>
-
-<br><br>
-
-<form class="form">
-  <input class="input" type="text" data-en="Name" data-fr="Nom" placeholder="Name">
-  <input class="input" type="text" data-en="Email" data-fr="Courriel" placeholder="Email">
-  <textarea class="textarea" type="text" data-en="Leave us a message." data-fr="Laissez-nous un message." placeholder="Leave us a message."></textarea>
-  <button type="Submit" class="button" data-en="Submit" data-fr="Soumettre" >Submit</button>
-</form>
-
-<br><br><br><br>
- <footer>
-  <p data-en="© 2025 LockIn • Study Smarter, Together."
-     data-fr="© 2025 LockIn • Étudiez plus intelligemment, ensemble.">
-     © 2025 LockIn • Study Smarter, Together.
-  </p>
-</footer>
-
-<script src="teampage.js"></script>
+  <!-- ================= FOOTER SECTION ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 Lockin · Study smarter, together.</div>
+      <div class="footer-links">
+        <a href="#top">Back to top</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#download">Download</a>
+        <a href="#team">Team</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
