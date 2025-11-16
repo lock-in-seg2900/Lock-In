@@ -1,238 +1,95 @@
-:root
-{
-    --navy: #003285;
-    --sky: #2A629A;
-    --sunset: #FF7F3E;
-    --yellow: #FFDA78;
-    --white: #fdfaf5;
-}
+.faq {
+      padding: 4rem 0 4.5rem;
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
 
-*
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'DM Sans', sans-serif;
-}
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 2rem;
+      margin-top: 2.3rem;
+    }
 
-body
-{
-    background: var(--navy);
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    min-height: 100;
-}
+    .faq-item {
+      padding: 1.1rem 1.1rem 1.2rem;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, #020617, #020617);
+      border: 1px solid rgba(31,41,55,0.9);
+      font-size: 0.9rem;
+    }
 
-nav
-{
-  background: linear-gradient(90deg, var(--navy), var(--sky));
-  padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    .faq-item h3 {
+      font-size: 0.98rem;
+      margin: 0 0 0.35rem;
+    }
 
-.logo
-{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--sunset);
-  font-size: 1.4rem;
-  font-weight: 700;
-}
+    .faq-item p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
 
-.logo img 
-{
-  height: 40px;
-  width: auto;
-}
+    /* ================= TEAM SECTION STYLES ================= */
 
-.links
-{
-  display: flex;
-  margin-left: auto;
-  align-items: center;
-}
+    .team {
+      padding: 4rem 0 4.5rem;
+      background: #020617;
+      border-top: 1px solid rgba(15,23,42,0.9);
+    }
 
-.links a 
-{
-  color: var(--yellow);
-  text-decoration: none;
-  margin: 0 1rem;
-  position: relative;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+      margin-top: 2.3rem;
+    }
 
-.links a::after 
-{
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--sunset);
-  transition: width 0.3s ease;
-}
+    .team-card {
+      padding: 1.6rem 1.4rem 1.8rem;
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, #020617, #020617 70%);
+      border: 1px solid rgba(31,41,55,0.9);
+      text-align: center;
+      font-size: 0.9rem;
+    }
 
-.links a:hover,
-.links a.active
-{
-  color: #ffffff;
-}
+    .team-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 0.9rem;
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border: 1px dashed rgba(148,163,184,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
 
-.links a:hover::after,
-.links a.active::after
-{
-  width: 100%;
-}
+    .team-name {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
 
-header 
-{
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-  background: var(--sky);
-  color: var(--yellow);
-}
+    .team-role {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 0.5rem;
+    }
 
-header h1 
-{
-  font-size: 2.6rem;
-  margin-bottom: 0.5rem;
-}
+    .team-bio {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      margin-bottom: 0.7rem;
+    }
 
-header p 
-{
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-
-.header-container
-{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #2A629A;
-    padding: 10px 40px;
-}
-
-.heading-faq
-{
-    padding-right: 0;
-}
-
-
-.faq-container
-{
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 0 2rem;
-}
-            
-.faq-item
-{
-    background-color: var(--white);
-    color: var(--navy);
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: all 0.5s ease;
-}
-
-.faq-item:hover
-{
-    box-shadow: 0 6px 15px rbga(255, 127, 62, 0.2);
-}
-
-.faq-question
-{
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-}
-
-.faq-question h3
-{
-    color: var(--sky);
-    font-weight: 600;
-    margin: 0;
-}
-
-.faq-toggle
-{
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--sunset);
-    transition: transform 0.3s ease-in-out;
-}
-
-.faq-answer
-{
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
-    background: white
-}
-
-.faq-item.active .faq-answer
-{
-    max-height: 500px;
-    margin: 0;
-}
-
-.faq-answer p
-{
-    padding: 0 1.5rem 1.5rem;
-    color: var(--navy);
-    margin: 0;
-}
-
-.faq-item.active .faq-toggle
-{
-    transform: rotate(90deg);
-    transition: max-height 0.6s ease-in;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
-  font-size: 0.9rem;
-  color: var(--yellow);
-  background: var(--navy);
-  border-top: 1px solid #0e2150;
-}
-
-.lang-switch {
-  display: flex;
-  align-items: center;
-  font-size: 0.85rem;
-  color: var(--yellow);
-  margin-left: 1rem;
-  gap: 4px;
-}
-
-.lang-switch span {
-  cursor: pointer;
-  opacity: 0.75;
-  transition: opacity 0.2s ease;
-  user-select: none;
-}
-
-.lang-switch span:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.divider {
-  opacity: 0.5;
-}
-
-
+    .team-tag {
+      display: inline-flex;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(55,65,81,0.9);
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
